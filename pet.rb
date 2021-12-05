@@ -1,4 +1,4 @@
-require 'CreateHtml'
+require_relative 'gems/lib/CreateHtml'
 
 class Pet
   include CreateHtml

@@ -1,4 +1,4 @@
-require './pet.rb'
+require_relative 'pet'
 
 class Game
   def create_pet
