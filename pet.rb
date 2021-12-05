@@ -1,4 +1,5 @@
 require 'CreateHtml'
+
 class Pet
   include CreateHtml
   attr_accessor :animal, :name, :health, :bellyful, :peppiness,
