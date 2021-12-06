@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/Sierra-Sergey/html_gem.git
-  revision: 349a6342ab3fea6d820118304b3153e7a590fbb5
+  revision: a6ed14e15eaa2556053490e090484d7ef94c76d1
   specs:
-    CreateHtml (0.1.0)
+    create_html (0.1.3)
 
 GEM
   remote: https://rubygems.org/
@@ -12,7 +12,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  CreateHtml!
+  create_html!
 
 BUNDLED WITH
    2.2.32
