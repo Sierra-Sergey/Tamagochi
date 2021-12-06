@@ -1,7 +1,6 @@
-require_relative 'gems/lib/CreateHtml'
+# require 'create_html'
 
 class Pet
-  include CreateHtml
   attr_accessor :animal, :name, :health, :bellyful, :peppiness,
                 :mood, :purity, :toilet, :asleep, :response, :emoji, :stats
 

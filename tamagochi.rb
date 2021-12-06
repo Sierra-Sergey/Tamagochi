@@ -1,3 +1,4 @@
+require 'create_html'
 require_relative 'pet'
 
 class Game
