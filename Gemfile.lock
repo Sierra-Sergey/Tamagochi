@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/Sierra-Sergey/html_gem.git
-  revision: 9fb148c94f188341dc5afec3c36fa7d328fd8f18
+  revision: ad60440cb4f466d452a63092fd0c6b50ab75d79b
   specs:
-    create_html (0.1.8)
+    create_html (0.2.0)
 
 GEM
   remote: https://rubygems.org/
