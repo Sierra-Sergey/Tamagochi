@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamagochi</title>
+     <link href="main.css" rel="stylesheet">
+     <script>
+       setInterval(()=>{window.location.reload()}, 2000)
+     </script>
+  </head>
+  <body>
+    <header>
+      <h1>Тамагочи</h1>
+    </header>
+
+    <section>
+      <article>
+        <h2>{{animal}} {{name}}</h2>
+        <div class="">
+          <section>
+            <article class="name_stats">
+              <p>Здоровье ---------</p>
+              <p>Сытость ----------</p>
+              <p>Бодрость ---------</p>
+              <p>Настроение -------</p>
+              <p>Чистота ----------</p>
+              <p>Туалет -----------</p>
+            </article>
+            <article class="stats">
+              <p>{{health}}</p>
+              <p>{{bellyful}}</p>
+              <p>{{peppiness}}</p>
+              <p>{{mood}}</p>
+              <p>{{purity}}</p>
+              <p>{{toilet}}</p>
+            </article>
+          </section>
+          <p>{{response}}</p>
+        </div>
+      </article>
+
+      <article>
+        <h2>Emoji</h2>
+        <p class="emoji">{{emoji}}</p>
+      </article>
+
+      <!-- <article>
+        <h2>Buttons</h2>
+        <br>
+        <form class="buttons" action="pet.html" method="post">
+          <button type="submit" name="feed" value="feed">Feed</button><br><br>
+          <button type="submit" name="sleep" value="sleep">Sleep</button><br><br>
+          <button type="submit" name="play" value="play">Play</button><br><br>
+          <button type="submit" name="toilet" value="toilet">Toilet</button><br><br>
+          <button type="submit" name="bath" value="bath">Bath</button>
+        </form>
+      </article> -->
+    </section>
+  </body>
+</html>
