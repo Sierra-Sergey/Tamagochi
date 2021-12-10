@@ -42,22 +42,25 @@ class Game
     @pet.help
     command = nil
     until command == 'exit'
-      command = gets.chomp
+      command = gets.chomp.strip
       case command
       when 'feed'   then @pet.feed
       when 'sleep'  then @pet.sleep
       when 'play'   then @pet.play_with_pet
       when 'toilet' then @pet.toil
       when 'bath'   then @pet.bath
+      when 'toss'   then @pet.toss
+      when 'heal'   then @pet.heal
+      when 'sweets' then @pet.sweets
+      when 'rock'   then @pet.rock
+      when 'watch'  then @pet.watch
       when 'help'   then @pet.help
       when 'info'   then @pet.info
       else next
       end
 
       html
-      if @pet.emoji == '&#127748;'
-        exit
-      end
+      exit if @pet.emoji == '&#127748;'
       @pet.response.clear
 
       next unless @pet.health <= 0

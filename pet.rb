@@ -36,6 +36,7 @@ class Pet
     @asleep = true
     @response << (p 'Вы уложили питомца спать')
     3.times { pass_of_time if @asleep }
+    @asleep = false
   end
 
   def play_with_pet
@@ -60,6 +61,52 @@ class Pet
     @bathing = false
   end
 
+  def toss
+    @mood += 15
+    @response << (p 'Вы подбрасываете питомца')
+    pass_of_time
+  end
+
+  def heal
+    @health += 5
+    @response << (p 'Вы даете питомцу витамины')
+    pass_of_time
+  end
+
+  def sweets
+    @bellyful += 20
+    @eating = true
+    @response << (p 'Вы угощаете питомца сладостями')
+    pass_of_time
+  end
+
+  def rock
+    @asleep = true
+    @response << (p 'Вы укачиваете питомца')
+    pass_of_time
+    @asleep = false
+  end
+
+  def watch
+    rand = rand(1..5)
+    case rand
+    when 1
+      @peppiness += 15
+      @response << (p 'Питомец пригрелся на солнышке')
+    when 2
+      @bellyful += 15
+      @toilet -= 30
+      @response << (p 'Питомец нашел и съел неспелые ягоды, это может привести к диарее')
+    when 3
+      @mood += 15
+      @response << (p 'Питомец бегает за воробьем')
+    when 4
+      @purity -= 20
+      @response << (p 'Питомец прыгает по лужам')
+    end
+    pass_of_time
+  end
+
   def help
     p 'Список возможных команд:'
     p 'feed --- покормить'
@@ -70,7 +117,11 @@ class Pet
     p 'info --- получить информацию о показателях питомца'
     p 'exit --- выйти с программы'
     p 'help --- получить список возможных команд'
-    p
+    p 'toss --- подбрасывать питомца'
+    p 'heal --- лечить питомца'
+    p 'sweets --- угостить сладостями'
+    p 'rock --- укачивать питомца'
+    p 'watch --- наблюдать за питомцем'
   end
 
   def info
@@ -97,13 +148,10 @@ class Pet
       @peppiness = 0 if @peppiness.negative?
       if @peppiness.zero?
         @health -= rand(5..15)
-        @mood -= 5
-        @response << (p 'От усталости Ваш питомец уснул на ходу и упал ударившись головой')
-        if @health <= 0
-          @response << (p 'Ваш питомец получил травму головы')
-        return
-        end
         @mood -= 10
+        @response << (p 'От усталости Ваш питомец уснул на ходу и упал ударившись головой')
+        return @response << (p 'Ваш питомец получил травму головы') if @health <= 0
+
       elsif @peppiness <= 30
         @response << (p 'Глаза начинают слипаться')
       end
@@ -152,15 +200,16 @@ class Pet
     end
 
     @mood = 100 if @mood > 100
+    @mood = 0 if @mood.negative?
     if @mood <= 0
       @response << (p 'Ваш питомец очень расстроен, он ушел из дома...')
       if rand(0..2).positive?
         @mood = 30
         @response << (p '...Но вернулся, спустя несколько часов')
-        else
-          @emoji = '&#127748;'
-          @response << (p '...навсегда')
-          return
+      else
+        @emoji = '&#127748;'
+        @response << (p '...навсегда')
+        return
       end
     end
     @stats = [@health, @bellyful, @peppiness, @mood, @purity, @toilet]
