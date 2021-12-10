@@ -1,1 +1,5 @@
 Gemfile
+Gemfile.lock
+.rubocop.yml
+template (копия).html
+pet_html.html
