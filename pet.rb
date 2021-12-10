@@ -99,10 +99,10 @@ class Pet
         @health -= rand(5..15)
         @mood -= 5
         @response << (p 'От усталости Ваш питомец уснул на ходу и упал ударившись головой')
-        # if @health <= 0
-        #   @response << (p 'Ваш питомец умер от полученых травм')
-        # exit
-        # end
+        if @health <= 0
+          @response << (p 'Ваш питомец получил травму головы')
+        return
+        end
         @mood -= 10
       elsif @peppiness <= 30
         @response << (p 'Глаза начинают слипаться')
@@ -141,10 +141,10 @@ class Pet
       if @bellyful.zero?
         @response << (p 'Ваш питомец мучается от голода')
         @health -= 5
-        # if @health <= 0
-        #   @response << (p 'Ваш питомец умер от голода')
-        #   # exit
-        # end
+        if @health <= 0
+          @response << (p 'Длительное голодание не приводит ни к чему хорошему')
+          return
+        end
       elsif @bellyful <= 30
         @mood -= 5
         @response << (p 'В животе урчит')
@@ -157,9 +157,10 @@ class Pet
       if rand(0..2).positive?
         @mood = 30
         @response << (p '...Но вернулся, спустя несколько часов')
-        # else
-        #   @response << (p '...навсегда')
-        #   # exit
+        else
+          @emoji = '&#127748;'
+          @response << (p '...навсегда')
+          return
       end
     end
     @stats = [@health, @bellyful, @peppiness, @mood, @purity, @toilet]

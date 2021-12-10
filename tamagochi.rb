@@ -52,10 +52,12 @@ class Game
       when 'help'   then @pet.help
       when 'info'   then @pet.info
       else next
-
       end
 
       html
+      if @pet.emoji == '&#127748;'
+        exit
+      end
       @pet.response.clear
 
       next unless @pet.health <= 0
