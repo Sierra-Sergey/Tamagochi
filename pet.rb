@@ -1,5 +1,3 @@
-# require 'create_html'
-
 class Pet
   attr_accessor :animal, :name, :health, :bellyful, :peppiness,
                 :mood, :purity, :toilet, :asleep, :response, :emoji, :stats
@@ -100,7 +98,7 @@ class Pet
       if @peppiness.zero?
         @health -= rand(5..15)
         @mood -= 5
-        @response << (p 'От усталости Ваш питомец уснул на ходу и упал ударившись головой об пол')
+        @response << (p 'От усталости Ваш питомец уснул на ходу и упал ударившись головой')
         # if @health <= 0
         #   @response << (p 'Ваш питомец умер от полученых травм')
         # exit
@@ -176,11 +174,11 @@ class Pet
                '&#128515;'
              end
 
-    return unless @health <= 0
-
-    @emoji = '☠'
-    @health = 0 if @health < 0
-    @response.clear << (p 'Ваш питомец умер')
-    # exit
+    # return unless @health <= 0
+    #
+    # @emoji = '☠'
+    # @health = 0 if @health < 0
+    # @response.clear << (p 'Ваш питомец умер')
+    # # exit
   end
 end

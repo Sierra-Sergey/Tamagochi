@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Tamagochi</title>
-    <script>
-      setInterval(()=>{window.location.reload()}, 2000)
-    </script>
+     <link href="main.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Тамагочи</h1>
-    <div id="mydiv" style="width: 50%; float: left">
-      <p>Dog rrrrrrrrrrrrrrr</p>
-      <p>Здоровье ---- 100</p>
-      <p>Сытость ----- 100</p>
-      <p>Бодрость ---- 100</p>
-      <p>Настроение -- 100</p>
-      <p>Чистота ----- 100</p>
-      <p>Туалет ------ 100</p>
-      <p></p>
-    </div>
-    <div class="emoji" style="width: 50%; float: right">
-      <p style="font-size: 10em">‍&#128515;</p>
-    </div>
+    <header>
+      <h1>Тамагочи</h1>
+    </header>
+
+    <section>
+      <article>
+        <h2>{{animal}} {{name}}</h2>
+        <p>Здоровье ---- {{health}}</p>
+        <p>Сытость ----- {{bellyful}}</p>
+        <p>Бодрость ---- {{peppiness}}</p>
+        <p>Настроение -- {{mood}}</p>
+        <p>Чистота ----- {{purity}}</p>
+        <p>Туалет ------ {{toilet}}</p>
+        <p>{{response}}</p>
+      </article>
+
+      <article>
+        <h2>Emoji</h2>
+        <p>{{emoji}}</p>
+      </article>
+
+      <article>
+        <h2>Buttons</h2>
+      </article>
+    </section>
   </body>
 </html>

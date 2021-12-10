@@ -1,18 +1,39 @@
 GIT
   remote: https://github.com/Sierra-Sergey/html_gem.git
-  revision: a6ed14e15eaa2556053490e090484d7ef94c76d1
+  revision: 9fb148c94f188341dc5afec3c36fa7d328fd8f18
   specs:
-    create_html (0.1.3)
+    create_html (0.1.8)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.2)
+    parallel (1.21.0)
+    parser (3.0.3.2)
+      ast (~> 2.4.1)
+    rainbow (3.0.0)
+    regexp_parser (2.2.0)
+    rexml (3.2.5)
+    rubocop (1.23.0)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.12.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.14.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
+    unicode-display_width (2.1.0)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
   create_html!
+  rubocop
 
 BUNDLED WITH
    2.2.32
